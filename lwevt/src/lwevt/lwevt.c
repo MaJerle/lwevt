@@ -67,8 +67,7 @@ lwevt_register(lwevt_fn evt_fn) {
 /**
  * \brief           Dispatch event to all registered functions
  *                  using custom event handle object
- * 
- * \param           evt: Event handle used as parameter to listeners
+ * \param           e: Event handle used as parameter to listeners
  * \param           type: Event type to dispatch
  * \return          `1` if dispatched, `0` otherwise
  */

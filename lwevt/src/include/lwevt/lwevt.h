@@ -26,7 +26,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
- * This file is part of LwEVT - Lightweight event system library.
+ * This file is part of LwEVT - Lightweight event manager.
  *
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
  * Version:         $_version_$
@@ -79,7 +79,7 @@ void        lwevt_init(void);
 uint8_t     lwevt_register(lwevt_fn evt_fn);
 lwevt_t*    lwevt_get_handle(void);
 uint8_t     lwevt_dispatch(lwevt_type_t type);
-uint8_t     lwevt_dispatch_ex(lwevt_t* evt, lwevt_type_t type);
+uint8_t     lwevt_dispatch_ex(lwevt_t* e, lwevt_type_t type);
 
 /**
  * \}

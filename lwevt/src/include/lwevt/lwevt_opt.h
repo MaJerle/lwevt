@@ -26,7 +26,7 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
- * This file is part of LwEVT - Lightweight event system library.
+ * This file is part of LwEVT - Lightweight event manager.
  *
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
  * Version:         $_version_$
