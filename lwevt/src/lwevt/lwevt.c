@@ -47,6 +47,11 @@ lwevt_init(void) {
     evt_fncs_cnt = 0;
 }
 
+/**
+ * \brief           Register new event listener callback to event manager
+ * \param           evt_fn: Function to add to list of listeners
+ * \return          `1` if added, `0` otherwise
+ */
 uint8_t
 lwevt_register(lwevt_fn evt_fn) {
     /* Add new function to the event system */
@@ -58,7 +63,17 @@ lwevt_register(lwevt_fn evt_fn) {
 }
 
 /**
+ * \brief           Get default handle object for dispatch purpose
+ * \return          Pointer to default event handle
+ */
+lwevt_t*
+lwevt_get_handle(void) {
+    return &evt;
+}
+
+/**
  * \brief           Dispatch event to all registered functions
+ * \note            It uses default event handle as parameter
  * \param[in]       type: Event type to dispatch
  * \return          `1` if dispatched, `0` otherwise
  */
@@ -71,9 +86,4 @@ lwevt_dispatch(lwevt_type_t type) {
         evt_fncs[i](&evt);
     }
     return 1;
-}
-
-lwevt_t*
-lwevt_get_handle(void) {
-    return &evt;
 }

@@ -1,6 +1,6 @@
 /**
- * \file            lwevt_opts_template.h
- * \brief           LwEVT configuration file
+ * \file            lwevt_types_template.h
+ * \brief           LwEVT application types
  */
 
 /*
@@ -31,10 +31,8 @@
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
  * Version:         $_version_$
  */
-#ifndef LWEVT_HDR_OPTS_H
-#define LWEVT_HDR_OPTS_H
 
-/* Rename this file to "lwevt_opts.h" for your application */
+/* Rename this file to "lwevt_opts.h" for your application and do not use include guard macros */
 
 /*
  * Define your different event types with 2 macros
@@ -47,8 +45,6 @@
  * 
  * LWEVT_TYPE_BASIC(APP_EVT_EXT_W_DATA_1, struct { uint32_t my_par1; uint32_t my_par2; } ext_w_data;)
  */
-
-#endif /* LWEVT_HDR_OPTS_H */
 
 LWEVT_TYPE_BASIC(LWEVT_TYPE_MY_BASIC_1)
 LWEVT_TYPE_BASIC(LWEVT_TYPE_MY_BASIC_2)

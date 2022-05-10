@@ -67,7 +67,7 @@ typedef struct {
         #define LWEVT_TYPE_EXT(name, data)      data;
         #include "lwevt/lwevt_type.h"
         const unsigned int dummy;               /*!< Dummy element if no others are used by user */
-    } msg;
+    } msg;                                      /*!< Message union for extended event types */
 } lwevt_t;
 
 /**
