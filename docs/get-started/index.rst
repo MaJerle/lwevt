@@ -92,13 +92,13 @@ If any option is about to be modified, it should be done in configuration file
     a global symbol ``LWEVT_IGNORE_USER_OPTS``, visible across entire application.
     This can be achieved with ``-D`` compiler option.
 
-Minimal example code
-^^^^^^^^^^^^^^^^^^^^
+Types file
+^^^^^^^^^^
 
-To verify proper library setup, minimal example has been prepared.
-Run it in your main application file to verify its proper execution
+Every project needs definition of various event types.
+``lwevt_types.h`` file defines list of events and optional data structure next to the event type
 
-.. literalinclude:: ../../examples/example_lwevt.c
+.. literalinclude:: ../../lwevt/src/include/lwevt/lwevt_types_template.h
     :language: c
     :linenos:
-    :caption: Absolute minimum example
+    :caption: Template types file

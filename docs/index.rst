@@ -3,7 +3,9 @@ LwEVT |version| documentation
 
 Welcome to the documentation for version |version|.
 
-LwEVT is a generic packet protocol library optimized for embedded systems.
+LwEVT is a simple event manager for embedded system.
+Its main purpose is to be able to send various events in the application from various modules.
+Application defines custom types with optional data structure to be sent to various application listeners.
 
 .. image:: static/images/logo.svg
     :align: center
