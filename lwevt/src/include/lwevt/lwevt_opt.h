@@ -62,6 +62,19 @@ extern "C" {
 #endif
 
 /**
+ * \brief           Enables `1` or disables `0` creation of default event handle
+ * 
+ * When enabled, user can use \ref lwevt_get_handle and \ref lwevt_dispatch functions
+ * to operate on defualt handle.
+ * 
+ * When disabled, user must create event handle before every dispatch,
+ * and is only able to use \ref lwevt_dispatch_ex function
+ */
+#ifndef LWEVT_CFG_ENABLE_DEFAULT_HANDLE
+#define LWEVT_CFG_ENABLE_DEFAULT_HANDLE         1
+#endif
+
+/**
  * \}
  */
 

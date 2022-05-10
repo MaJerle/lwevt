@@ -79,6 +79,7 @@ void        lwevt_init(void);
 uint8_t     lwevt_register(lwevt_fn evt_fn);
 lwevt_t*    lwevt_get_handle(void);
 uint8_t     lwevt_dispatch(lwevt_type_t type);
+uint8_t     lwevt_dispatch_ex(lwevt_t* evt, lwevt_type_t type);
 
 /**
  * \}
