@@ -26,15 +26,17 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
- * This file is part of LwEVT - Lightweight event system library.
+ * This file is part of LwEVT - Lightweight event manager.
  *
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
- * Version:         $_version_$
+ * Version:         v0.1.0
  */
 #include <string.h>
 #include "lwevt/lwevt.h"
 
+#if LWEVT_CFG_ENABLE_DEFAULT_HANDLE
 static lwevt_t evt;
+#endif /* LWEVT_CFG_ENABLE_DEFAULT_HANDLE */
 static lwevt_fn evt_fncs[LWEVT_CFG_MAX_EVT_LISTENERS];
 static uint32_t evt_fncs_cnt;
 
@@ -47,6 +49,11 @@ lwevt_init(void) {
     evt_fncs_cnt = 0;
 }
 
+/**
+ * \brief           Register new event listener callback to event manager
+ * \param           evt_fn: Function to add to list of listeners
+ * \return          `1` if added, `0` otherwise
+ */
 uint8_t
 lwevt_register(lwevt_fn evt_fn) {
     /* Add new function to the event system */
@@ -59,21 +66,44 @@ lwevt_register(lwevt_fn evt_fn) {
 
 /**
  * \brief           Dispatch event to all registered functions
+ *                  using custom event handle object
+ * \param           e: Event handle used as parameter to listeners
+ * \param           type: Event type to dispatch
+ * \return          `1` if dispatched, `0` otherwise
+ */
+uint8_t
+lwevt_dispatch_ex(lwevt_t* e, lwevt_type_t type) {
+    e->type = type;
+
+    /* Send event to all registered functions */
+    for (size_t i = 0; i < evt_fncs_cnt; ++i) {
+        evt_fncs[i](e);
+    }
+    return 1;
+}
+
+#if LWEVT_CFG_ENABLE_DEFAULT_HANDLE || __DOXYGEN__
+
+/**
+ * \brief           Get default handle object for dispatch purpose
+ * \note            Available only when \ref LWEVT_CFG_ENABLE_DEFAULT_HANDLE is enabled
+ * \return          Pointer to default event handle
+ */
+lwevt_t*
+lwevt_get_handle(void) {
+    return &evt;
+}
+
+/**
+ * \brief           Dispatch event to all registered functions
+ * \note            It uses default event handle as parameter
+ * \note            Available only when \ref LWEVT_CFG_ENABLE_DEFAULT_HANDLE is enabled
  * \param[in]       type: Event type to dispatch
  * \return          `1` if dispatched, `0` otherwise
  */
 uint8_t
 lwevt_dispatch(lwevt_type_t type) {
-    evt.type = type;
-
-    /* Send event to all registered functions */
-    for (size_t i = 0; i < evt_fncs_cnt; ++i) {
-        evt_fncs[i](&evt);
-    }
-    return 1;
+    lwevt_dispatch_ex(&evt, type);
 }
 
-lwevt_t*
-lwevt_get_handle(void) {
-    return &evt;
-}
+#endif /* LWEVT_CFG_ENABLE_DEFAULT_HANDLE || __DOXYGEN__ */

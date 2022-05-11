@@ -26,10 +26,10 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
- * This file is part of LwEVT - Lightweight event system library.
+ * This file is part of LwEVT - Lightweight event manager.
  *
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
- * Version:         $_version_$
+ * Version:         v0.1.0
  */
 #ifndef LWEVT_HDR_OPT_H
 #define LWEVT_HDR_OPT_H
@@ -59,6 +59,19 @@ extern "C" {
  */
 #ifndef LWEVT_CFG_MAX_EVT_LISTENERS
 #define LWEVT_CFG_MAX_EVT_LISTENERS             8
+#endif
+
+/**
+ * \brief           Enables `1` or disables `0` creation of default event handle
+ * 
+ * When enabled, user can use \ref lwevt_get_handle and \ref lwevt_dispatch functions
+ * to operate on defualt handle.
+ * 
+ * When disabled, user must create event handle before every dispatch,
+ * and is only able to use \ref lwevt_dispatch_ex function
+ */
+#ifndef LWEVT_CFG_ENABLE_DEFAULT_HANDLE
+#define LWEVT_CFG_ENABLE_DEFAULT_HANDLE         1
 #endif
 
 /**

@@ -26,15 +26,13 @@
  * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
  * OTHER DEALINGS IN THE SOFTWARE.
  *
- * This file is part of LwEVT - Lightweight event system library.
+ * This file is part of LwEVT - Lightweight event manager.
  *
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
- * Version:         $_version_$
+ * Version:         v0.1.0
  */
-#ifndef LWEVT_HDR_TYPES_H
-#define LWEVT_HDR_TYPES_H
 
-/* Rename this file to "lwevt_opts.h" for your application */
+/* Rename this file to "lwevt_opts.h" for your application and do not use include guard macros */
 
 /*
  * Define your different event types with 2 macros
@@ -47,5 +45,3 @@
  * 
  * LWEVT_TYPE_BASIC(APP_EVT_EXT_W_DATA_1, struct { uint32_t my_par1; uint32_t my_par2; } ext_w_data;)
  */
-
-#endif /* LWEVT_HDR_TYPES_H */
