@@ -21,6 +21,7 @@ prv_evt_fn_2(lwevt_t* e) {
 int
 main() {
     lwevt_t* evt;
+    lwevt_t evt_local;
 
     /* Initialize event management system */
     lwevt_init();
@@ -38,6 +39,10 @@ main() {
      */
     evt = lwevt_get_handle();
     evt->msg.a.a = 5;
-    lwevt_dispatch(LWEVT_TYPE_MY_BASIC_1);
+    lwevt_dispatch(LWEVT_TYPE_MY_EXT_1);
+
+    /* Send local event */
+    evt_local.msg.a.a = 5;
+    lwevt_dispatch_ex(&evt_local, LWEVT_TYPE_MY_EXT_1);
     return 0;
 }
