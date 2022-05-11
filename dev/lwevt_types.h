@@ -1,5 +1,5 @@
 /**
- * \file            lwevt_types_template.h
+ * \file            lwevt_types.h
  * \brief           LwEVT application types
  */
 
@@ -52,3 +52,5 @@ LWEVT_TYPE_BASIC(LWEVT_TYPE_MY_BASIC_3)
 LWEVT_TYPE_EXT(LWEVT_TYPE_MY_EXT_1, struct { int a; int b; } a)
 LWEVT_TYPE_EXT(LWEVT_TYPE_MY_EXT_2, struct { int a; int b; } b)
 LWEVT_TYPE_EXT(LWEVT_TYPE_MY_EXT_3, struct { int a; int b; } c)
+
+/* Add more types here ... */

@@ -32,12 +32,26 @@
  * Version:         $_version_$
  */
 
-/* Define basic type - no data part */
+/**
+ * \ingroup         LWEVT
+ * \brief           Defines basic event type with respective name, only
+ * 
+ * Basic events do not have possibility to send data to application
+ * 
+ * `#define LWEVT_TYPE_BASIC(MY_EVENT_NAME)`
+ */
 #ifndef LWEVT_TYPE_BASIC
 #define LWEVT_TYPE_BASIC(name)
 #endif
 
-/* Define extended type - with data */
+/**
+ * \ingroup         LWEVT
+ * \brief           Defines extended event type with possibily to send data
+ * 
+ * Data C-type has to be declared for proper use case
+ * 
+ * `#define LWEVT_TYPE_EXT(MY_EVENT_NAME, struct {int par1; int par2;} my_event_name;)`
+ */
 #ifndef LWEVT_TYPE_EXT
 #define LWEVT_TYPE_EXT(name, data)
 #endif
