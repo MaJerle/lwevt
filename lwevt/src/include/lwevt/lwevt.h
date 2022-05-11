@@ -29,7 +29,7 @@
  * This file is part of LwEVT - Lightweight event manager.
  *
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
- * Version:         $_version_$
+ * Version:         v0.1.0
  */
 #ifndef LWEVT_HDR_H
 #define LWEVT_HDR_H
