@@ -103,7 +103,7 @@ lwevt_get_handle(void) {
  */
 uint8_t
 lwevt_dispatch(lwevt_type_t type) {
-    lwevt_dispatch_ex(&evt, type);
+    return lwevt_dispatch_ex(&evt, type);
 }
 
 #endif /* LWEVT_CFG_ENABLE_DEFAULT_HANDLE || __DOXYGEN__ */
