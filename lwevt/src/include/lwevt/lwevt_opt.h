@@ -58,7 +58,7 @@ extern "C" {
  * It defines size of array for function pointers
  */
 #ifndef LWEVT_CFG_MAX_EVT_LISTENERS
-#define LWEVT_CFG_MAX_EVT_LISTENERS             8
+#define LWEVT_CFG_MAX_EVT_LISTENERS 8
 #endif
 
 /**
@@ -71,7 +71,7 @@ extern "C" {
  * and is only able to use \ref lwevt_dispatch_ex function
  */
 #ifndef LWEVT_CFG_ENABLE_DEFAULT_HANDLE
-#define LWEVT_CFG_ENABLE_DEFAULT_HANDLE         1
+#define LWEVT_CFG_ENABLE_DEFAULT_HANDLE 1
 #endif
 
 /**
