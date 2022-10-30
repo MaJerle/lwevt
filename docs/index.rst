@@ -67,6 +67,7 @@ Table of contents
     :caption: Other projects
     :hidden:
 
+    LwBTN - Button manager <https://github.com/MaJerle/lwbtn>
     LwDTC - DateTimeCron <https://github.com/MaJerle/lwdtc>
     LwESP - ESP-AT library <https://github.com/MaJerle/lwesp>
     LwEVT - Event manager <https://github.com/MaJerle/lwevt>
@@ -75,7 +76,7 @@ Table of contents
     LwJSON - JSON parser <https://github.com/MaJerle/lwjson>
     LwMEM - Memory manager <https://github.com/MaJerle/lwmem>
     LwOW - OneWire with UART <https://github.com/MaJerle/lwow>
-    LwPKT - Packet protocol <https://github.com/MaJerle/lwevt>
+    LwPKT - Packet protocol <https://github.com/MaJerle/lwpkt>
     LwPRINTF - Printf <https://github.com/MaJerle/lwprintf>
     LwRB - Ring buffer <https://github.com/MaJerle/lwrb>
     LwSHELL - Shell <https://github.com/MaJerle/lwshell>
