@@ -31,8 +31,8 @@
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
  * Version:         v0.1.0
  */
-#ifndef LWEVT_HDR_OPT_H
-#define LWEVT_HDR_OPT_H
+#ifndef LWEVT_OPT_HDR_H
+#define LWEVT_OPT_HDR_H
 
 /* Uncomment to ignore user options (or set macro in compiler flags) */
 /* #define LWEVT_IGNORE_USER_OPTS */
@@ -82,4 +82,4 @@ extern "C" {
 }
 #endif /* __cplusplus */
 
-#endif /* LWEVT_HDR_OPT_H */
+#endif /* LWEVT_OPT_HDR_H */
