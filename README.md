@@ -4,7 +4,7 @@
 
 ## Features
 
-* Written in ANSI C99
+* Written in C (C11)
 * Platform independent, no architecture specific code
 * Flexible for application defined event types and associated data
 * Easy to use and maintain
