@@ -53,6 +53,15 @@ extern "C" {
  */
 
 /**
+ * \brief           Memory set function
+ * 
+ * \note            Function footprint is the same as \ref memset
+ */
+#ifndef LWEVT_MEMSET
+#define LWEVT_MEMSET(dst, val, len) memset((dst), (val), (len))
+#endif
+
+/**
  * \brief           Maximum number of event listeners that can receive info on event dispatch
  * 
  * It defines size of array for function pointers
