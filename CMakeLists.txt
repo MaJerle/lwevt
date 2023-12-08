@@ -35,6 +35,7 @@ else()
     )
 
     # Add subdir with lwevt and link to project
+    set(LWEVT_OPTS_DIR ${CMAKE_CURRENT_LIST_DIR}/dev)
     add_subdirectory(lwevt)
     target_link_libraries(${PROJECT_NAME} lwevt)
 endif()

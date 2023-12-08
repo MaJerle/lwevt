@@ -67,6 +67,10 @@ Next step is to add the library to the project, by means of source files to comp
 * Copy ``lwevt/src/include/lwevt/lwevt_types_template.h`` to project folder and rename it to ``lwevt_types.h``
 * Build the project
 
+.. tip::
+    If you are using *CMake* build system, you can add the library to the project by adding the *library's folder*
+    directory with ``add_directory()`` CMake command, followed by linking the target with ``target_link_libraries()``
+
 Configuration file
 ^^^^^^^^^^^^^^^^^^
 
@@ -79,7 +83,11 @@ and it should be copied (or simply renamed in-place) and named ``lwevt_opts.h``
     File must be renamed to ``lwevt_opts.h`` first and then copied to the project directory where compiler
     include paths have access to it by using ``#include "lwevt_opts.h"``.
 
-List of configuration options are available in the :ref:`api_lwevt_opt` section.
+.. tip::
+    If you are using *CMake* build system, define the variable ``LWEVT_OPTS_DIR`` before adding library's directory to the *CMake* project.
+    Variable must set the output directory path. CMake will copy the template file there, and name it as required.
+
+Configuration options list is available available in the :ref:`api_lwevt_opt` section.
 If any option is about to be modified, it should be done in configuration file
 
 .. literalinclude:: ../../lwevt/src/include/lwevt/lwevt_opts_template.h
@@ -97,6 +105,10 @@ Types file
 
 Every project needs definition of various event types.
 ``lwevt_types.h`` file defines list of events and optional data structure next to the event type
+
+.. tip::
+    If you are using *CMake* build system, define the variable ``LWEVT_TYPES_DIR`` before adding library's directory to the *CMake* project.
+    Variable must set the output directory path. CMake will copy the template file there, and name it as required.
 
 .. literalinclude:: ../../lwevt/src/include/lwevt/lwevt_types_template.h
     :language: c
