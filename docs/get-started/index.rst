@@ -58,7 +58,17 @@ Add library to project
 ^^^^^^^^^^^^^^^^^^^^^^
 
 At this point it is assumed that you have successfully download library, either cloned it or from releases page.
-Next step is to add the library to the project, by means of source files to compiler inputs and header files in search path
+Next step is to add the library to the project, by means of source files to compiler inputs and header files in search path.
+
+*CMake* is the main supported build system. Package comes with the ``CMakeLists.txt`` and ``library.cmake`` files, both located in the ``lwevt`` directory:
+
+* ``CMakeLists.txt``: Is a wrapper and only includes ``library.cmake`` file. It is used if target application uses ``add_subdirectory`` and then uses ``target_link_libraries`` to include the library in the project
+* ``library.cmake``: It is a fully configured set of variables. User must use ``include(path/to/library.cmake)`` to include the library and must manually add files/includes to the final target
+
+.. tip::
+    Open ``library.cmake`` file and manually analyze all the possible variables you can set for full functionality.
+
+If you do not use the *CMake*, you can do the following:
 
 * Copy ``lwevt`` folder to your project, it contains library files
 * Add ``lwevt/src/include`` folder to `include path` of your toolchain. This is where `C/C++` compiler can find the files during compilation process. Usually using ``-I`` flag
@@ -66,10 +76,6 @@ Next step is to add the library to the project, by means of source files to comp
 * Copy ``lwevt/src/include/lwevt/lwevt_opts_template.h`` to project folder and rename it to ``lwevt_opts.h``
 * Copy ``lwevt/src/include/lwevt/lwevt_types_template.h`` to project folder and rename it to ``lwevt_types.h``
 * Build the project
-
-.. tip::
-    If you are using *CMake* build system, you can add the library to the project by adding the *library's folder*
-    directory with ``add_directory()`` CMake command, followed by linking the target with ``target_link_libraries()``
 
 Configuration file
 ^^^^^^^^^^^^^^^^^^
