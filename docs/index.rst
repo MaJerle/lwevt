@@ -24,6 +24,14 @@ Features
 * Easy to use and maintain
 * User friendly MIT license
 
+Applications
+^^^^^^^^^^^^
+
+To name a few:
+
+* Communication in RS-485 network between various devices
+* Low-level point to point packet communication (UART, USB, ethernet, ...)
+
 Requirements
 ^^^^^^^^^^^^
 
