@@ -4,7 +4,7 @@
  */
 
 /*
- * Copyright (c) 2022 Tilen MAJERLE
+ * Copyright (c) 2024 Tilen MAJERLE
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -34,8 +34,8 @@
 #ifndef LWEVT_HDR_H
 #define LWEVT_HDR_H
 
-#include <string.h>
 #include <stdint.h>
+#include <string.h>
 #include "lwevt/lwevt_opt.h"
 
 #ifdef __cplusplus
@@ -52,22 +52,24 @@ extern "C" {
  * \brief           Event type
  */
 typedef enum {
-    #define LWEVT_TYPE_BASIC(name)              name,
-    #define LWEVT_TYPE_EXT(name, data)          name,
-    #include "lwevt/lwevt_type.h"
-    LWEVT_TYPE_LAST                             /*!< Last element on the list */
+
+#define LWEVT_TYPE_BASIC(name)     name,
+#define LWEVT_TYPE_EXT(name, data) name,
+#include "lwevt/lwevt_type.h"
+    LWEVT_TYPE_LAST /*!< Last element on the list */
 } lwevt_type_t;
 
 /**
  * \brief           Main event structure
  */
 typedef struct {
-    lwevt_type_t type;                          /*!< Event type */
+    lwevt_type_t type; /*!< Event type */
+
     union {
-        #define LWEVT_TYPE_EXT(name, data)      data;
-        #include "lwevt/lwevt_type.h"
-        const unsigned int dummy;               /*!< Dummy element if no others are used by user */
-    } msg;                                      /*!< Message union for extended event types */
+#define LWEVT_TYPE_EXT(name, data) data;
+#include "lwevt/lwevt_type.h"
+        const unsigned int dummy; /*!< Dummy element if no others are used by user */
+    } msg;                        /*!< Message union for extended event types */
 } lwevt_t;
 
 /**
@@ -75,11 +77,11 @@ typedef struct {
  */
 typedef void (*lwevt_fn)(lwevt_t* evt);
 
-void        lwevt_init(void);
-uint8_t     lwevt_register(lwevt_fn evt_fn);
-lwevt_t*    lwevt_get_handle(void);
-uint8_t     lwevt_dispatch(lwevt_type_t type);
-uint8_t     lwevt_dispatch_ex(lwevt_t* e, lwevt_type_t type);
+void lwevt_init(void);
+uint8_t lwevt_register(lwevt_fn evt_fn);
+lwevt_t* lwevt_get_handle(void);
+uint8_t lwevt_dispatch(lwevt_type_t type);
+uint8_t lwevt_dispatch_ex(lwevt_t* e, lwevt_type_t type);
 
 /**
  * \}

@@ -15,11 +15,11 @@ produce() {
     lwevt_dispatch(LWEVT_TYPE_MY_EXT_1);
 
     /*
-     * Send event usin local handle
+     * Send event using local handle
      * No need to ensure thread safety
      */
     evt_local.msg.ext1.par1 = 10;   /* Some value */
     evt_local.msg.ext1.par2 = 12;   /* Some value */
-    lwevt_dispatch(LWEVT_TYPE_MY_EXT_1);
+    lwevt_dispatch_ex(&evt_local, LWEVT_TYPE_MY_EXT_1);
     return 0;
 }

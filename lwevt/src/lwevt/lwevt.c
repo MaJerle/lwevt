@@ -4,7 +4,7 @@
  */
 
 /*
- * Copyright (c) 2022 Tilen MAJERLE
+ * Copyright (c) 2024 Tilen MAJERLE
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -31,6 +31,8 @@
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
  * Version:         v0.1.0
  */
+#include <stddef.h>
+#include <stdint.h>
 #include <string.h>
 #include "lwevt/lwevt.h"
 
@@ -45,7 +47,7 @@ static uint32_t evt_fncs_cnt;
  */
 void
 lwevt_init(void) {
-    memset(&evt, 0x00, sizeof(evt));
+    LWEVT_MEMSET(&evt, 0x00, sizeof(evt));
     evt_fncs_cnt = 0;
 }
 
@@ -67,17 +69,17 @@ lwevt_register(lwevt_fn evt_fn) {
 /**
  * \brief           Dispatch event to all registered functions
  *                  using custom event handle object
- * \param           e: Event handle used as parameter to listeners
+ * \param           ehandle: Event handle used as parameter to listeners
  * \param           type: Event type to dispatch
  * \return          `1` if dispatched, `0` otherwise
  */
 uint8_t
-lwevt_dispatch_ex(lwevt_t* e, lwevt_type_t type) {
-    e->type = type;
+lwevt_dispatch_ex(lwevt_t* ehandle, lwevt_type_t type) {
+    ehandle->type = type;
 
     /* Send event to all registered functions */
-    for (size_t i = 0; i < evt_fncs_cnt; ++i) {
-        evt_fncs[i](e);
+    for (size_t idx = 0; idx < evt_fncs_cnt; ++idx) {
+        evt_fncs[idx](ehandle);
     }
     return 1;
 }
@@ -103,7 +105,7 @@ lwevt_get_handle(void) {
  */
 uint8_t
 lwevt_dispatch(lwevt_type_t type) {
-    lwevt_dispatch_ex(&evt, type);
+    return lwevt_dispatch_ex(&evt, type);
 }
 
 #endif /* LWEVT_CFG_ENABLE_DEFAULT_HANDLE || __DOXYGEN__ */

@@ -4,7 +4,7 @@
  */
 
 /*
- * Copyright (c) 2022 Tilen MAJERLE
+ * Copyright (c) 2024 Tilen MAJERLE
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -31,8 +31,8 @@
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
  * Version:         v0.1.0
  */
-#ifndef LWEVT_HDR_OPT_H
-#define LWEVT_HDR_OPT_H
+#ifndef LWEVT_OPT_HDR_H
+#define LWEVT_OPT_HDR_H
 
 /* Uncomment to ignore user options (or set macro in compiler flags) */
 /* #define LWEVT_IGNORE_USER_OPTS */
@@ -53,12 +53,21 @@ extern "C" {
  */
 
 /**
+ * \brief           Memory set function
+ * 
+ * \note            Function footprint is the same as \ref memset
+ */
+#ifndef LWEVT_MEMSET
+#define LWEVT_MEMSET(dst, val, len) memset((dst), (val), (len))
+#endif
+
+/**
  * \brief           Maximum number of event listeners that can receive info on event dispatch
  * 
  * It defines size of array for function pointers
  */
 #ifndef LWEVT_CFG_MAX_EVT_LISTENERS
-#define LWEVT_CFG_MAX_EVT_LISTENERS             8
+#define LWEVT_CFG_MAX_EVT_LISTENERS 8
 #endif
 
 /**
@@ -71,7 +80,7 @@ extern "C" {
  * and is only able to use \ref lwevt_dispatch_ex function
  */
 #ifndef LWEVT_CFG_ENABLE_DEFAULT_HANDLE
-#define LWEVT_CFG_ENABLE_DEFAULT_HANDLE         1
+#define LWEVT_CFG_ENABLE_DEFAULT_HANDLE 1
 #endif
 
 /**
@@ -82,4 +91,4 @@ extern "C" {
 }
 #endif /* __cplusplus */
 
-#endif /* LWEVT_HDR_OPT_H */
+#endif /* LWEVT_OPT_HDR_H */

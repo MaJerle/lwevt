@@ -4,7 +4,7 @@
  */
 
 /*
- * Copyright (c) 2022 Tilen MAJERLE
+ * Copyright (c) 2024 Tilen MAJERLE
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -31,8 +31,8 @@
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
  * Version:         v0.1.0
  */
-#ifndef LWEVT_HDR_OPTS_H
-#define LWEVT_HDR_OPTS_H
+#ifndef LWEVT_OPTS_HDR_H
+#define LWEVT_OPTS_HDR_H
 
 /* Rename this file to "lwevt_opts.h" for your application */
 
@@ -41,4 +41,4 @@
  * copy & replace here settings you want to change values
  */
 
-#endif /* LWEVT_HDR_OPTS_H */
+#endif /* LWEVT_OPTS_HDR_H */

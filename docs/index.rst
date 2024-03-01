@@ -18,11 +18,19 @@ Application defines custom types with optional data structure to be sent to vari
 Features
 ^^^^^^^^
 
-* Written in ANSI C99
+* Written in C (C11)
 * Platform independent, no architecture specific code
 * Flexible for application defined event types and associated data
 * Easy to use and maintain
 * User friendly MIT license
+
+Applications
+^^^^^^^^^^^^
+
+To name a few:
+
+* Communication in RS-485 network between various devices
+* Low-level point to point packet communication (UART, USB, ethernet, ...)
 
 Requirements
 ^^^^^^^^^^^^
@@ -60,22 +68,26 @@ Table of contents
     get-started/index
     user-manual/index
     api-reference/index
+    changelog/index
+    authors/index
 
 .. toctree::
     :maxdepth: 2
     :caption: Other projects
     :hidden:
 
+    LwBTN - Button manager <https://github.com/MaJerle/lwbtn>
     LwDTC - DateTimeCron <https://github.com/MaJerle/lwdtc>
     LwESP - ESP-AT library <https://github.com/MaJerle/lwesp>
     LwEVT - Event manager <https://github.com/MaJerle/lwevt>
     LwGPS - GPS NMEA parser <https://github.com/MaJerle/lwgps>
-    LwGSM - GSM-AT library <https://github.com/MaJerle/lwgsm>
+    LwCELL - Cellular modem host AT library <https://github.com/MaJerle/lwcell>
     LwJSON - JSON parser <https://github.com/MaJerle/lwjson>
     LwMEM - Memory manager <https://github.com/MaJerle/lwmem>
     LwOW - OneWire with UART <https://github.com/MaJerle/lwow>
-    LwPKT - Packet protocol <https://github.com/MaJerle/lwevt>
+    LwPKT - Packet protocol <https://github.com/MaJerle/lwpkt>
     LwPRINTF - Printf <https://github.com/MaJerle/lwprintf>
     LwRB - Ring buffer <https://github.com/MaJerle/lwrb>
     LwSHELL - Shell <https://github.com/MaJerle/lwshell>
     LwUTIL - Utility functions <https://github.com/MaJerle/lwutil>
+    LwWDG - RTOS task watchdog <https://github.com/MaJerle/lwwdg>
