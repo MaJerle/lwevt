@@ -1,37 +1,35 @@
 {
-	"name": "LwEVT",
-	"version": "0.1.0",
-	"description": "Lightweight event manager for embedded systems",
-	"keywords": "lwevt, event, manager, evt, lightweight, embedded",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/MaJerle/lwevt.git"
-	},
-	"authors": [
-		{
-			"name": "Tilen Majerle",
-			"email": "tilen@majerle.eu",
-			"url": "https://majerle.eu"
-		}
-	],
-	"license": "MIT",
-	"homepage": "https://github.com/MaJerle/lwevt",
-	"dependencies": {
-
-	},
-	"frameworks": "*",
-	"platforms": "*",
-	"export": {
-		"exclude": [
-			".github",
-			"dev",
-			"docs",
-			"**/.vs",
-			"**/Debug",
-			"build",
-			"**/build"
-		]
-	},
+    "name": "LwEVT",
+    "version": "1.0.0",
+    "description": "Lightweight event manager for embedded systems",
+    "keywords": "lwevt, event, manager, evt, lightweight, embedded",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MaJerle/lwevt.git"
+    },
+    "authors": [
+        {
+            "name": "Tilen Majerle",
+            "email": "tilen@majerle.eu",
+            "url": "https://majerle.eu"
+        }
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/MaJerle/lwevt",
+    "dependencies": {},
+    "frameworks": "*",
+    "platforms": "*",
+    "export": {
+        "exclude": [
+            ".github",
+            "dev",
+            "docs",
+            "**/.vs",
+            "**/Debug",
+            "build",
+            "**/build"
+        ]
+    },
     "build": {
         "includeDir": "lwevt/src/include"
     }

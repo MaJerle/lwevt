@@ -29,7 +29,7 @@
  * This file is part of LwEVT - Lightweight event manager.
  *
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
- * Version:         v0.1.0
+ * Version:         v1.0.0
  */
 #include <stddef.h>
 #include <stdint.h>
@@ -69,17 +69,17 @@ lwevt_register(lwevt_fn evt_fn) {
 /**
  * \brief           Dispatch event to all registered functions
  *                  using custom event handle object
- * \param           ehandle: Event handle used as parameter to listeners
+ * \param           evt_handle: Event handle used as parameter to listeners
  * \param           type: Event type to dispatch
  * \return          `1` if dispatched, `0` otherwise
  */
 uint8_t
-lwevt_dispatch_ex(lwevt_t* ehandle, lwevt_type_t type) {
-    ehandle->type = type;
+lwevt_dispatch_ex(lwevt_t* evt_handle, lwevt_type_t type) {
+    evt_handle->type = type;
 
     /* Send event to all registered functions */
     for (size_t idx = 0; idx < evt_fncs_cnt; ++idx) {
-        evt_fncs[idx](ehandle);
+        evt_fncs[idx](evt_handle);
     }
     return 1;
 }

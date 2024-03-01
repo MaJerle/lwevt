@@ -2,7 +2,10 @@
 
 ## Develop
 
-- Add `.clang-format` draft
+## v1.0.0
+
+- Add `.clang-format`
+- First official release
 
 ## v0.1.0
 
