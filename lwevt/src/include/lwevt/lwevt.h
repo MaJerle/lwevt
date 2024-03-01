@@ -29,7 +29,7 @@
  * This file is part of LwEVT - Lightweight event manager.
  *
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
- * Version:         v0.1.0
+ * Version:         v1.0.0
  */
 #ifndef LWEVT_HDR_H
 #define LWEVT_HDR_H
@@ -81,7 +81,7 @@ void lwevt_init(void);
 uint8_t lwevt_register(lwevt_fn evt_fn);
 lwevt_t* lwevt_get_handle(void);
 uint8_t lwevt_dispatch(lwevt_type_t type);
-uint8_t lwevt_dispatch_ex(lwevt_t* e, lwevt_type_t type);
+uint8_t lwevt_dispatch_ex(lwevt_t* evt_handle, lwevt_type_t type);
 
 /**
  * \}

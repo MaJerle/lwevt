@@ -29,7 +29,7 @@
  * This file is part of LwEVT - Lightweight event manager.
  *
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
- * Version:         v0.1.0
+ * Version:         v1.0.0
  */
 
 /* Rename this file to "lwevt_opts.h" for your application and do not use include guard macros */
@@ -49,8 +49,20 @@
 LWEVT_TYPE_BASIC(LWEVT_TYPE_MY_BASIC_1)
 LWEVT_TYPE_BASIC(LWEVT_TYPE_MY_BASIC_2)
 LWEVT_TYPE_BASIC(LWEVT_TYPE_MY_BASIC_3)
-LWEVT_TYPE_EXT(LWEVT_TYPE_MY_EXT_1, struct { int a; int b; } a)
-LWEVT_TYPE_EXT(LWEVT_TYPE_MY_EXT_2, struct { int a; int b; } b)
-LWEVT_TYPE_EXT(LWEVT_TYPE_MY_EXT_3, struct { int a; int b; } c)
+LWEVT_TYPE_EXT(
+    LWEVT_TYPE_MY_EXT_1, struct {
+        int a;
+        int b;
+    } a)
+LWEVT_TYPE_EXT(
+    LWEVT_TYPE_MY_EXT_2, struct {
+        int a;
+        int b;
+    } b)
+LWEVT_TYPE_EXT(
+    LWEVT_TYPE_MY_EXT_3, struct {
+        int a;
+        int b;
+    } c)
 
 /* Add more types here ... */
