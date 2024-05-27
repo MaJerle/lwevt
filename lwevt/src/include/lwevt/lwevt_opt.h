@@ -74,7 +74,7 @@ extern "C" {
  * \brief           Enables `1` or disables `0` creation of default event handle
  * 
  * When enabled, user can use \ref lwevt_get_handle and \ref lwevt_dispatch functions
- * to operate on defualt handle.
+ * to operate on default handle.
  * 
  * When disabled, user must create event handle before every dispatch,
  * and is only able to use \ref lwevt_dispatch_ex function
