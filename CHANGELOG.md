@@ -2,6 +2,8 @@
 
 ## Develop
 
+- Rework library CMake with removed INTERFACE type
+
 ## v1.0.0
 
 - Add `.clang-format`

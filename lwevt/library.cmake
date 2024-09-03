@@ -1,4 +1,4 @@
-# 
+#
 # LIB_PREFIX: LWEVT
 #
 # This file provides set of variables for end user
@@ -16,7 +16,7 @@
 set(LWEVT_CUSTOM_INC_DIR ${CMAKE_CURRENT_BINARY_DIR}/lib_inc)
 
 # Library core sources
-set(lwevt_core_SRCS 
+set(lwevt_core_SRCS
     ${CMAKE_CURRENT_LIST_DIR}/src/lwevt/lwevt.c
 )
 
@@ -27,9 +27,9 @@ set(lwevt_include_DIRS
 )
 
 # Register library to the system
-add_library(lwevt INTERFACE)
-target_sources(lwevt INTERFACE ${lwevt_core_SRCS})
-target_include_directories(lwevt INTERFACE ${lwevt_include_DIRS})
+add_library(lwevt)
+target_sources(lwevt PRIVATE ${lwevt_core_SRCS})
+target_include_directories(lwevt PUBLIC ${lwevt_include_DIRS})
 target_compile_options(lwevt PRIVATE ${LWEVT_COMPILE_OPTIONS})
 target_compile_definitions(lwevt PRIVATE ${LWEVT_COMPILE_DEFINITIONS})
 
@@ -40,6 +40,7 @@ if(NOT LWEVT_OPTS_FILE)
 else()
     message(STATUS "Using custom lwevt_opts.h file from ${LWEVT_OPTS_FILE}")
 endif()
+
 configure_file(${LWEVT_OPTS_FILE} ${LWEVT_CUSTOM_INC_DIR}/lwevt_opts.h COPYONLY)
 
 # Create config file if user didn't provide one info himself
@@ -49,4 +50,5 @@ if(NOT LWEVT_TYPES_FILE)
 else()
     message(STATUS "Using custom lwevt_opts.h file from ${LWEVT_TYPES_FILE}")
 endif()
+
 configure_file(${LWEVT_TYPES_FILE} ${LWEVT_CUSTOM_INC_DIR}/lwevt_types.h COPYONLY)
