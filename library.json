@@ -31,6 +31,8 @@
         ]
     },
     "build": {
-        "includeDir": "lwevt/src/include"
+        "includeDir": "lwevt/src/include",
+        "srcDir": ".",
+        "srcFilter": "+<lwevt>"
     }
 }
