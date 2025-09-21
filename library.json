@@ -1,6 +1,6 @@
 {
     "name": "LwEVT",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Lightweight event manager for embedded systems",
     "keywords": "lwevt, event, manager, evt, lightweight, embedded",
     "repository": {
