@@ -29,7 +29,7 @@
  * This file is part of LwEVT - Lightweight event manager.
  *
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
- * Version:         v1.0.0
+ * Version:         v1.1.0
  */
 #include <stddef.h>
 #include <stdint.h>
@@ -47,7 +47,9 @@ static uint32_t evt_fncs_cnt;
  */
 void
 lwevt_init(void) {
+#if LWEVT_CFG_ENABLE_DEFAULT_HANDLE
     LWEVT_MEMSET(&evt, 0x00, sizeof(evt));
+#endif /* LWEVT_CFG_ENABLE_DEFAULT_HANDLE */
     evt_fncs_cnt = 0;
 }
 

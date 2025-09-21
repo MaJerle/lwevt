@@ -29,7 +29,7 @@
  * This file is part of LwEVT - Lightweight event manager.
  *
  * Author:          Tilen MAJERLE <tilen@majerle.eu>
- * Version:         v1.0.0
+ * Version:         v1.1.0
  */
 #ifndef LWEVT_OPT_HDR_H
 #define LWEVT_OPT_HDR_H
@@ -74,7 +74,7 @@ extern "C" {
  * \brief           Enables `1` or disables `0` creation of default event handle
  * 
  * When enabled, user can use \ref lwevt_get_handle and \ref lwevt_dispatch functions
- * to operate on defualt handle.
+ * to operate on default handle.
  * 
  * When disabled, user must create event handle before every dispatch,
  * and is only able to use \ref lwevt_dispatch_ex function
