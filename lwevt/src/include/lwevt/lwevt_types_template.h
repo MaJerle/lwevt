@@ -32,7 +32,7 @@
  * Version:         v1.1.0
  */
 
-/* Rename this file to "lwevt_opts.h" for your application and do not use include guard macros */
+/* Rename this file to "lwevt_types.h" for your application and do not use include guard macros */
 
 /*
  * Define your different event types with 2 macros
