@@ -60,6 +60,17 @@ lwevt_init(void) {
  */
 uint8_t
 lwevt_register(lwevt_fn evt_fn) {
+    if (evt_fn == NULL) {
+        return 0;
+    }
+
+    /* Do not add the same function twice - it would otherwise run once per registration */
+    for (size_t idx = 0; idx < evt_fncs_cnt; ++idx) {
+        if (evt_fncs[idx] == evt_fn) {
+            return 0;
+        }
+    }
+
     /* Add new function to the event system */
     if (evt_fncs_cnt < (sizeof(evt_fncs) / sizeof(evt_fncs[0]))) {
         evt_fncs[evt_fncs_cnt++] = evt_fn;
@@ -77,6 +88,9 @@ lwevt_register(lwevt_fn evt_fn) {
  */
 uint8_t
 lwevt_dispatch_ex(lwevt_t* evt_handle, lwevt_type_t type) {
+    if (evt_handle == NULL) {
+        return 0;
+    }
     evt_handle->type = type;
 
     /* Send event to all registered functions */
