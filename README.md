@@ -1,6 +1,6 @@
 # Lightweight event manager
 
-<h3>Read first: <a href="http://docs.majerle.eu/projects/lwevt/">Documentation</a></h3>
+[Open documentation](https://docs.majerle.eu/projects/lwevt/)
 
 ## Features
 
