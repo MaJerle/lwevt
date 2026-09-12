@@ -4,7 +4,7 @@
 
 ## Features
 
-* Written in C (C11), compatible with `stdint.h` for size data types
+* Written in C (C11), compatible with `stdint.h` data types
 * Platform independent, no architecture specific code
 * Flexible for application defined event types and associated data
 * Easy to use and maintain
