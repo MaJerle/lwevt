@@ -4,7 +4,7 @@
  */
 
 /*
- * Copyright (c) 2024 Tilen MAJERLE
+ * Copyright (c) 2026 Tilen MAJERLE
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -38,10 +38,10 @@
  * Define your different event types with 2 macros
  *
  * Basic definition - event type w/o possibility for data
- * 
+ *
  * LWEVT_TYPE_BASIC(APP_EVT_BASIC_1)
- * 
+ *
  * Extended definition - event type w/ possibility for data
- * 
+ *
  * LWEVT_TYPE_BASIC(APP_EVT_EXT_W_DATA_1, struct { uint32_t my_par1; uint32_t my_par2; } ext_w_data;)
  */

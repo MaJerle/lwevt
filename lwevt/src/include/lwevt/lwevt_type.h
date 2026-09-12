@@ -4,7 +4,7 @@
  */
 
 /*
- * Copyright (c) 2024 Tilen MAJERLE
+ * Copyright (c) 2026 Tilen MAJERLE
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -35,9 +35,9 @@
 /**
  * \ingroup         LWEVT
  * \brief           Defines basic event type with respective name, only
- * 
+ *
  * Basic events do not have possibility to send data to application
- * 
+ *
  * `#define LWEVT_TYPE_BASIC(MY_EVENT_NAME)`
  */
 #ifndef LWEVT_TYPE_BASIC
@@ -47,9 +47,9 @@
 /**
  * \ingroup         LWEVT
  * \brief           Defines extended event type with possibily to send data
- * 
+ *
  * Data C-type has to be declared for proper use case
- * 
+ *
  * `#define LWEVT_TYPE_EXT(MY_EVENT_NAME, struct {int par1; int par2;} my_event_name;)`
  */
 #ifndef LWEVT_TYPE_EXT
