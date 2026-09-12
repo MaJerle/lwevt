@@ -18,7 +18,7 @@ Application defines custom types with optional data structure to be sent to vari
 Features
 ^^^^^^^^
 
-* Written in C (C11)
+* Written in C (C11), compatible with `stdint.h` for size data types
 * Platform independent, no architecture specific code
 * Flexible for application defined event types and associated data
 * Easy to use and maintain
