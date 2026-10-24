@@ -43,5 +43,5 @@
  *
  * Extended definition - event type w/ possibility for data
  *
- * LWEVT_TYPE_BASIC(APP_EVT_EXT_W_DATA_1, struct { uint32_t my_par1; uint32_t my_par2; } ext_w_data;)
+ * LWEVT_TYPE_EXT(APP_EVT_EXT_W_DATA_1, struct { uint32_t my_par1; uint32_t my_par2; } ext_w_data)
  */

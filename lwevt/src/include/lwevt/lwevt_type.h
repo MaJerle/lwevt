@@ -50,7 +50,7 @@
  *
  * Data C-type has to be declared for proper use case
  *
- * `#define LWEVT_TYPE_EXT(MY_EVENT_NAME, struct {int par1; int par2;} my_event_name;)`
+ * `#define LWEVT_TYPE_EXT(MY_EVENT_NAME, struct {int par1; int par2;} my_event_name)`
  */
 #ifndef LWEVT_TYPE_EXT
 #define LWEVT_TYPE_EXT(name, data)
